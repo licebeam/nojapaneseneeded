@@ -18,7 +18,15 @@ class MainContainer extends Component {
         id: 1
       },
       {
-        job: { title: 'Supreme', description: 'Marketing Director', location: 'Tokyo', date: 'Sep 29', logo: 'https://static.highsnobiety.com/wp-content/uploads/2018/01/16110157/supreme-box-logo-00.jpg', fresh: false },
+        job: { title: 'Supreme', description: 'Marketing Director', location: 'Tokyo', date: 'Sep 2', logo: 'https://static.highsnobiety.com/wp-content/uploads/2018/01/16110157/supreme-box-logo-00.jpg', fresh: false },
+        id: 2
+      },
+      {
+        job: { title: 'Supreme', description: 'Marketing Director', location: 'Tokyo', date: 'Sep 2', logo: 'https://static.highsnobiety.com/wp-content/uploads/2018/01/16110157/supreme-box-logo-00.jpg', fresh: false },
+        id: 2
+      },
+      {
+        job: { title: 'Supreme', description: 'Marketing Director', location: 'Tokyo', date: 'Sep 2', logo: 'https://static.highsnobiety.com/wp-content/uploads/2018/01/16110157/supreme-box-logo-00.jpg', fresh: false },
         id: 2
       }
     ]

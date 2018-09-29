@@ -3,7 +3,7 @@ import JobPost from './JobPost';
 import styled from 'styled-components';
 
 const BodyContainer = styled.div`
-  background-color: grey;
+  background-color: whitesmoke;
   .hero-section{
     height: 200px;
   }
