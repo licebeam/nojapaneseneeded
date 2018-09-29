@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body';
+import JobPage from './components/JobPage';
 import styled from 'styled-components';
 import './index.css';
 import {
   BrowserRouter as Router,
   Route,
-  Link
 } from 'react-router-dom'
 
 const Container = styled.div`
@@ -28,11 +28,11 @@ class MainContainer extends Component {
       },
       {
         job: { title: 'Supreme', description: 'Marketing Director', location: 'Tokyo', date: 'Sep 10', logo: 'https://static.highsnobiety.com/wp-content/uploads/2018/01/16110157/supreme-box-logo-00.jpg', fresh: false },
-        id: 2
+        id: 3
       },
       {
         job: { title: 'Supreme', description: 'Marketing Director', location: 'Tokyo', date: 'Sep 20', logo: 'https://static.highsnobiety.com/wp-content/uploads/2018/01/16110157/supreme-box-logo-00.jpg', fresh: false },
-        id: 2
+        id: 4
       }
     ]
   }
@@ -46,6 +46,12 @@ class MainContainer extends Component {
               <Body jobPosts={this.state.jobPosts} />
             }
             />
+            {this.state.jobPosts.map(job => {
+              return <Route exact path={'/Job/' + job.id} render={() =>
+                <JobPage job={job} />
+              }
+              />
+            })}
             < Footer />
           </div >
         </Router >

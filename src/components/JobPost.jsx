@@ -82,7 +82,7 @@ class JobPost extends Component {
     const { job } = this.props
     return (
       <Link to={'/Job/' + job.id}>
-        <Job onClick={() => alert('not available yet')}>
+        <Job>
           <div className="top">
             <div className="logo">
               <img className="image" src={job.job.logo} alt={job.job.title} />

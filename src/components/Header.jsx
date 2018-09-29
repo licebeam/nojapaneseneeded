@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 const HeaderBody = styled.div`
   background-color: whitesmoke;
@@ -30,7 +35,9 @@ class Header extends Component {
   render() {
     return (
       <HeaderBody className="Header-header">
-        <div className="header-title">NJN</div>
+        <Link to='/'>
+          <div className="header-title">NJN</div>
+        </Link>
         <div className="nav">
           <div className="nav-item">Categories</div>
           <div className="nav-item">Community</div>
