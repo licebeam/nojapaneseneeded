@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobPost from './JobPost';
 import styled from 'styled-components';
+import photo from './photo.jpg'
 
 const BodyContainer = styled.div`
   background-color: whitesmoke;
@@ -8,7 +9,9 @@ const BodyContainer = styled.div`
     height: 200px;
     text-align: center;
     padding: 80px;
-    background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/10/13/tokyo-main.jpg?w968h681');
+    background-image: url(${photo});
+    background-size: cover;
+    background-repeat: no-repeat;
     font-size: 1rem;
     color: whitesmoke;
   }
