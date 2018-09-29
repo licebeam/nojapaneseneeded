@@ -8,7 +8,9 @@ const BodyContainer = styled.div`
     height: 200px;
     text-align: center;
     padding: 80px;
-    background-image: url('https://images.pexels.com/photos/161309/traditional-and-technology-zojoji-temple-tokyo-culture-161309.jpeg');
+    background-image: url('https://static.independent.co.uk/s3fs-public/thumbnails/image/2018/04/10/13/tokyo-main.jpg?w968h681');
+    font-size: 1rem;
+    color: whitesmoke;
   }
 `
 class Body extends Component {
