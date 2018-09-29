@@ -53,7 +53,7 @@ const JobPageContainer = styled.div`
     font-size: .8rem;
   }
   .details{
-    height: 300px;
+    min-height: 300px;
   }
   }
 `
