@@ -1,17 +1,24 @@
 import React, { Component } from 'react';
 import JobPost from './JobPost';
+import styled from 'styled-components';
 
+const BodyContainer = styled.div`
+  background-color: grey;
+  .hero-section{
+    height: 200px;
+  }
+`
 class Body extends Component {
   render() {
     const { jobPosts } = this.props
     const filteredJobPosts = jobPosts; //change later for search bar
     return (
-      <div className="Body">
+      <BodyContainer>
         <div className="hero-section">No Japanese Needed</div>
         {filteredJobPosts.map(job => (
-          <JobPost />
+          <JobPost job={job} />
         ))}
-      </div>
+      </BodyContainer>
     );
   }
 }

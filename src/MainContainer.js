@@ -8,9 +8,21 @@ import './index.css';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: auto;
 `
 class MainContainer extends Component {
-  state = { jobPosts: [{ job: { title: 'test' }, id: 1 }, { job: { title: 'test' }, id: 2 }] }
+  state = {
+    jobPosts: [
+      {
+        job: { title: 'test', description: 'blah blah blah' },
+        id: 1
+      },
+      {
+        job: { title: 'test', description: 'blah blah blah' },
+        id: 2
+      }
+    ]
+  }
   render() {
     return (
       <Container>
