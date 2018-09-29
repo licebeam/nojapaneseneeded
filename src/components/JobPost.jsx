@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 const Job = styled.div`
   background-color: whitesmoke;
-  height: 100px;
+  height: 80px;
   padding: 10px;
   border-bottom: 2px solid grey;
   display: flex;
@@ -14,7 +14,6 @@ const Job = styled.div`
     align-items: center;
     .logo{
     border-radius: 50%;
-    border: 2px solid black;
     height: 40px;
     width: 40px;
     overflow: hidden;
@@ -27,9 +26,11 @@ const Job = styled.div`
    .title{
       font-size: 1.5rem;
       padding: 10px;
+      font-weight: bold;
     }
     .description{
       color: grey;
+      font-size: 1rem;
     }
   }
   .bottom{
@@ -38,23 +39,31 @@ const Job = styled.div`
     padding: 20px;
     align-items: center;
     .location{
-       font-size: 1.2rem;
-        flex: 4;
+       font-size: 0.8rem;
+        flex: 3;
     }
     .date{
-      font-size: 1.2rem;
+      font-size: 1rem;
       flex: 1;
     }
     .fresh{
       background-color: red;
       height: 10px;
-      width: 30px;
+      width: 20px;
+      color: white;
+      padding: 10px;
+      flex: 1;
+      text-align: center;
+      border-radius: 20px;
+    }
+    .old{
+      height: 10px;
+      width: 20px;
       color: white;
       padding: 10px;
       flex: 1;
     }
   }
- 
 `
 class JobPost extends Component {
   render() {
@@ -71,7 +80,9 @@ class JobPost extends Component {
         <div className="bottom">
           <div className="location">{job.job.location}</div>
           <div className="date">{job.job.date}</div>
-          <div className="fresh">{job.job.fresh ? 'New' : null}</div>
+          {job.job.fresh ? (
+            <div className="fresh">{job.job.fresh ? 'New' : null}</div>
+          ) : <div className="old" />}
         </div>
       </Job>
     );

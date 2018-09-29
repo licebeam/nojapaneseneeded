@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 const HeaderBody = styled.div`
-  background-color: black;
-  color: white;
+  background-color: whitesmoke;
+  color: black;
   display: flex;
+  font-size: 1rem;
   flex-direction: row;
   .header-title{
     padding: 10px;
+    font-weight: bold;
+    font-size: 1.2rem;
   }
   .nav{
     display: flex;
@@ -27,7 +30,7 @@ class Header extends Component {
   render() {
     return (
       <HeaderBody className="Header-header">
-        <h3 className="header-title">NJN</h3>
+        <div className="header-title">NJN</div>
         <div className="nav">
           <div className="nav-item">test</div>
           <div className="nav-item">test</div>

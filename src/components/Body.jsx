@@ -6,6 +6,8 @@ const BodyContainer = styled.div`
   background-color: whitesmoke;
   .hero-section{
     height: 200px;
+    text-align: center;
+    padding: 20px;
   }
 `
 class Body extends Component {

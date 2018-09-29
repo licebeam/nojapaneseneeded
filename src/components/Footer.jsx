@@ -3,13 +3,17 @@ import styled from 'styled-components';
 
 const FooterContainer = styled.div`
   height: 200px;
-  background-color: darkblue;
+  background-color: black;
+  color: whitesmoke;
+  .footer-text{
+    padding: 40px;
+  }
 `
 class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        im the foota
+        <div className='footer-text'>Hey hey</div>
       </FooterContainer>
     );
   }
