@@ -32,8 +32,8 @@ class Header extends Component {
       <HeaderBody className="Header-header">
         <div className="header-title">NJN</div>
         <div className="nav">
-          <div className="nav-item">test</div>
-          <div className="nav-item">test</div>
+          <div className="nav-item">Categories</div>
+          <div className="nav-item">Community</div>
         </div>
       </HeaderBody>
     );

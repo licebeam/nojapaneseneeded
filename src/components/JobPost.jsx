@@ -8,6 +8,10 @@ const Job = styled.div`
   border-bottom: 2px solid grey;
   display: flex;
   flex-direction: column;
+  &:hover{
+    opacity: 0.8;
+    background-color: grey;
+  }
   .top{  
     display: flex;
     flex-direction: row; 
