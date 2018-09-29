@@ -17,18 +17,18 @@ const JobPageContainer = styled.div`
       flex-direction: row;
        align-items: center;
       .title{
-      font-size: 2rem;
+      font-size: 1.5rem;
       padding: 10px;
     }
       .logo{
       border-radius: 50%;
-      height: 60px;
-      width: 60px;
+      height: 50px;
+      width: 50px;
       overflow: hidden;
       .image{
         object-fit: cover;
-        height: 60px;
-        width: 60px;
+        height: 50px;
+        width: 50px;
       }
     }
     }   
@@ -45,7 +45,7 @@ const JobPageContainer = styled.div`
     margin-bottom: 40px;
   }
   .date{
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: grey;
     padding: 20px;
   }
