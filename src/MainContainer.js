@@ -15,7 +15,7 @@ class MainContainer extends Component {
     return (
       <Container>
         <Header />
-        <Body jobPosts={jobPosts} />
+        <Body jobPosts={this.state.jobPosts} />
         <Footer />
       </Container>
     );
