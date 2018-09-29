@@ -12,6 +12,9 @@ const HeaderBody = styled.div`
   display: flex;
   font-size: 1rem;
   flex-direction: row;
+    a{
+    text-decoration: none !important;
+   }
   .header-title{
     padding: 10px;
     font-weight: bold;
