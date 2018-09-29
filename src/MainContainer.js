@@ -4,6 +4,11 @@ import Footer from './components/Footer';
 import Body from './components/Body';
 import styled from 'styled-components';
 import './index.css';
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 const Container = styled.div`
   display: flex;
@@ -34,10 +39,18 @@ class MainContainer extends Component {
   render() {
     return (
       <Container>
-        <Header />
-        <Body jobPosts={this.state.jobPosts} />
-        <Footer />
+        <Router>
+          <div>
+            <Header />
+            <Route exact path="/" render={() =>
+              <Body jobPosts={this.state.jobPosts} />
+            }
+            />
+            < Footer />
+          </div >
+        </Router >
       </Container>
+
     );
   }
 }

@@ -18,13 +18,16 @@ class Body extends Component {
     return (
       <BodyContainer>
         <div className="hero-section">
-          <div>No Japanese Needed</div>
-          <div>Looking for a job in Japan but your Japanese skills aren't up to snuff?</div>
+          <div className='hero-title'>No Japanese Needed</div>
+          <div className='hero-subtext'>Looking for a job in Japan but your Japanese skills aren' t up to snuff?</div>
+          <div className='ad-container'>Post a Job?</div>
         </div>
-        {filteredJobPosts.map(job => (
-          <JobPost job={job} />
-        ))}
-      </BodyContainer>
+        {
+          filteredJobPosts.map(job => (
+            <JobPost job={job} />
+          ))
+        }
+      </BodyContainer >
     );
   }
 }

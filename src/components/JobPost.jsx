@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components'
+import {
+  BrowserRouter as Router,
+  Route,
+  Link
+} from 'react-router-dom'
 
 const Job = styled.div`
   background-color: whitesmoke;
@@ -8,9 +13,12 @@ const Job = styled.div`
   border-bottom: 2px solid grey;
   display: flex;
   flex-direction: column;
+    a{
+    text-decoration: none;
+   }
   &:hover{
     opacity: 0.8;
-    background-color: grey;
+    background-color: lightgray;
   }
   .top{  
     display: flex;
@@ -73,22 +81,24 @@ class JobPost extends Component {
   render() {
     const { job } = this.props
     return (
-      <Job onClick={() => alert('not available yet')}>
-        <div className="top">
-          <div className="logo">
-            <img className="image" src={job.job.logo} alt={job.job.title} />
+      <Link to={'/Job/' + job.id}>
+        <Job onClick={() => alert('not available yet')}>
+          <div className="top">
+            <div className="logo">
+              <img className="image" src={job.job.logo} alt={job.job.title} />
+            </div>
+            <div className="title">{job.job.title}</div>
+            <div className="description">{job.job.description}</div>
           </div>
-          <div className="title">{job.job.title}</div>
-          <div className="description">{job.job.description}</div>
-        </div>
-        <div className="bottom">
-          <div className="location">{job.job.location}</div>
-          <div className="date">{job.job.date}</div>
-          {job.job.fresh ? (
-            <div className="fresh">{job.job.fresh ? 'New' : null}</div>
-          ) : <div className="old" />}
-        </div>
-      </Job>
+          <div className="bottom">
+            <div className="location">{job.job.location}</div>
+            <div className="date">{job.job.date}</div>
+            {job.job.fresh ? (
+              <div className="fresh">{job.job.fresh ? 'New' : null}</div>
+            ) : <div className="old" />}
+          </div>
+        </Job>
+      </Link>
     );
   }
 }
