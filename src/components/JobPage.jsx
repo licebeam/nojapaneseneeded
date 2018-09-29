@@ -48,7 +48,18 @@ class JobPage extends Component {
           <div className='location'>{job.job.location}</div>
           <p>date posted:</p>
           <div className='date'>{job.job.date}</div>
-
+          <p>details:</p>
+          <div>
+            {job.job.details}
+          </div>
+          <p>visa requirements:</p>
+          <div>
+            {job.job.visa}
+          </div>
+          <p>application link:</p>
+          <div>
+            {job.job.apply}
+          </div>
         </div>
       </JobPageContainer >
     );
