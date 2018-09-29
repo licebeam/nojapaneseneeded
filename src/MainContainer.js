@@ -10,11 +10,12 @@ const Container = styled.div`
   flex-direction: column;
 `
 class MainContainer extends Component {
+  state = { jobPosts: [{ job: { title: 'test' }, id: 1 }] }
   render() {
     return (
       <Container>
         <Header />
-        <Body />
+        <Body jobPosts={jobPosts} />
         <Footer />
       </Container>
     );
