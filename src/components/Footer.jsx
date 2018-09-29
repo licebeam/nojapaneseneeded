@@ -13,7 +13,7 @@ class Footer extends Component {
   render() {
     return (
       <FooterContainer>
-        <div className='footer-text'>No Japanese Need Copyright 2018</div>
+        <div className='footer-text'>No Japanese Needed 2018</div>
       </FooterContainer>
     );
   }

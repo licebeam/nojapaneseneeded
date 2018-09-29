@@ -9,6 +9,11 @@ const BodyContainer = styled.div`
   margin: 0 auto;
   }
   background-color: whitesmoke;
+  .category{
+    font-size: 1rem;
+    color: red;
+    margin-top: 80px;
+  }
   .hero-section{
     height: 200px;
     text-align: center;
@@ -17,7 +22,11 @@ const BodyContainer = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 1rem;
-    color: black;
+    color: whitesmoke;
+    .hero-title{
+     font-size:  2rem;
+     font-family: 'Anton', sans-serif;
+    }
   }
 `
 class Body extends Component {
@@ -28,9 +37,22 @@ class Body extends Component {
       <BodyContainer>
         <div className="hero-section">
           <div className='hero-title'>No Japanese Needed</div>
-          <div className='hero-subtext'>Looking for a job in Japan but your Japanese skills aren' t up to snuff?</div>
-          <div className='ad-container'>Post a Job?</div>
+          <div className='hero-subtext'>Looking for a job in Japan but your Japanese skills are lacking?</div>
+          <div className='ad-container'></div>
         </div>
+        <div className='category'>Engineering</div>
+        {
+          filteredJobPosts.map(job => (
+            <JobPost job={job} />
+          ))
+        }
+        <div className='category'>Education</div>
+        {
+          filteredJobPosts.map(job => (
+            <JobPost job={job} />
+          ))
+        }
+        <div className='category'>Design</div>
         {
           filteredJobPosts.map(job => (
             <JobPost job={job} />

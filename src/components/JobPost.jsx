@@ -10,7 +10,7 @@ const Job = styled.div`
   background-color: whitesmoke;
   height: 80px;
   padding: 10px;
-  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
   display: flex;
   flex-direction: column;
   &:hover{
