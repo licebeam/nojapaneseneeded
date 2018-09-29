@@ -19,6 +19,7 @@ var config = {
   storageBucket: "nojapaneserequired.appspot.com",
   messagingSenderId: "821936912941"
 };
+// Stripe.setPublishableKey('pk_test_CWyqPoVSOaiho82ozXTYlPEx');
 
 firebase.initializeApp(config);
 // Initialize Cloud Firestore through Firebase
