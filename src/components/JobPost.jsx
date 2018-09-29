@@ -83,13 +83,13 @@ class JobPost extends Component {
         <Job>
           <div className="top">
             <div className="logo">
-              <img className="image" src={job.job.logo} alt={job.job.title} />
+              <img className="image" src={job.job.logo} alt='' />
             </div>
-            <div className="title">{job.job.title}</div>
-            <div className="description">{job.job.description}</div>
+            <div className="title">{job.job.title.slice(0, 10)}</div>
+            <div className="description">{job.job.description.slice(0, 10)}</div>
           </div>
           <div className="bottom">
-            <div className="location">{job.job.location}</div>
+            <div className="location">{job.job.location.slice(0, 10)}</div>
             <div className="date">{job.job.date}</div>
             {job.job.fresh ? (
               <div className="fresh">{job.job.fresh ? 'New' : null}</div>

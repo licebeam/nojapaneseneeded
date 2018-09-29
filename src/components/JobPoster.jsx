@@ -70,7 +70,6 @@ class JobPoster extends Component {
   }
   render() {
     const { job, postNewJob } = this.props
-    console.log(this.state.jobTitle)
     const date = new Date().toLocaleDateString();
     return (
       <JobPosterContainer>
