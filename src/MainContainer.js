@@ -10,7 +10,7 @@ const Container = styled.div`
   flex-direction: column;
 `
 class MainContainer extends Component {
-  state = { jobPosts: [{ job: { title: 'test' }, id: 1 }] }
+  state = { jobPosts: [{ job: { title: 'test' }, id: 1 }, { job: { title: 'test' }, id: 2 }] }
   render() {
     return (
       <Container>

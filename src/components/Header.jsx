@@ -27,7 +27,7 @@ class Header extends Component {
   render() {
     return (
       <HeaderBody className="Header-header">
-        <h3 className="header-title">Job Board</h3>
+        <h3 className="header-title">NJN</h3>
         <div className="nav">
           <div className="nav-item">test</div>
           <div className="nav-item">test</div>

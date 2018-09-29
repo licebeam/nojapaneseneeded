@@ -7,6 +7,7 @@ class Body extends Component {
     const filteredJobPosts = jobPosts; //change later for search bar
     return (
       <div className="Body">
+        <div className="hero-section">No Japanese Needed</div>
         {filteredJobPosts.map(job => (
           <JobPost />
         ))}
