@@ -68,12 +68,10 @@ class MainContainer extends Component {
   }
 
   getJobPosts = () => {
-    console.log('getting jobs')
     db.collection("jobs")
       .get()
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          console.log(doc.data())
           this.setState({ jobPosts: doc.data().jobPosts })
         });
       })
