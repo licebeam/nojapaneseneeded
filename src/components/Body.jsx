@@ -22,7 +22,7 @@ const BodyContainer = styled.div`
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 1rem;
-    color: whitesmoke;
+    color: black;
     .hero-title{
      font-size:  2rem;
      font-family: 'Anton', sans-serif;
