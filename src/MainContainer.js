@@ -40,7 +40,7 @@ var db = firebase.firestore();
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  overflow: auto;
+  overflow: auto; 
 `
 class MainContainer extends Component {
   state = {

@@ -4,6 +4,10 @@ import styled from 'styled-components';
 import photo from './photo.jpg'
 
 const BodyContainer = styled.div`
+@media (min-width: 800px) {
+  width: 80%;
+  margin: 0 auto;
+  }
   background-color: whitesmoke;
   .hero-section{
     height: 200px;

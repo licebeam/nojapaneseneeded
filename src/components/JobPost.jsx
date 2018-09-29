@@ -7,6 +7,10 @@ import {
 } from 'react-router-dom'
 
 const Job = styled.div`
+@media (min-width: 800px) {
+  width: 80%;
+  margin: 0 auto;
+  }
   background-color: whitesmoke;
   height: 80px;
   padding: 10px;
