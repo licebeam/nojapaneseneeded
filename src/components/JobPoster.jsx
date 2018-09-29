@@ -70,22 +70,22 @@ class JobPoster extends Component {
           <div>Category</div>
           <input type="text" onChange={(e) => { this.setState({ category: e.target.value }) }} />
           <button onClick={() => {
-            console.log('postin'),
-              postNewJob({
-                job: {
-                  title: this.state.jobTitle,
-                  description: this.state.positionTitle,
-                  location: this.state.location,
-                  date: date,
-                  logo: this.state.logoUrl,
-                  details: this.state.details,
-                  visa: this.state.visa,
-                  apply: this.state.applyUrl,
-                  category: this.state.category,
-                  fresh: false
-                },
-                id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + Date.now(),
-              })
+            alert('posted job');
+            // postNewJob({
+            //   job: {
+            //     title: this.state.jobTitle,
+            //     description: this.state.positionTitle,
+            //     location: this.state.location,
+            //     date: date,
+            //     logo: this.state.logoUrl,
+            //     details: this.state.details,
+            //     visa: this.state.visa,
+            //     apply: this.state.applyUrl,
+            //     category: this.state.category,
+            //     fresh: false
+            //   },
+            //   id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + Date.now(),
+            // })
           }}>Post Job</button>
         </div>
       </JobPosterContainer >
