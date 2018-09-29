@@ -16,8 +16,8 @@ const HeaderBody = styled.div`
     text-decoration: none !important;
    }
   .header-title{
-    font-family: 'Anton', sans-serif;
-    letter-spacing: 2px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
     color: white;
     padding: 10px;
     font-size: 1.2rem;

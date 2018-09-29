@@ -26,7 +26,11 @@ const BodyContainer = styled.div`
     color: black;
     .hero-title{
      font-size:  2rem;
-     font-family: 'Anton', sans-serif;
+     color: red;
+     font-family: 'Roboto', sans-serif;
+     font-weight: bold;
+     border-bottom: 1px solid red;
+     margin-bottom: 20px
     }
   }
 `
