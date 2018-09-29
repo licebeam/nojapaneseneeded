@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Body from './components/Body';
 import styled from 'styled-components';
 import './index.css';
 
@@ -13,6 +14,7 @@ class MainContainer extends Component {
     return (
       <Container>
         <Header />
+        <Body />
         <Footer />
       </Container>
     );
