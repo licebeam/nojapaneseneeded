@@ -63,7 +63,7 @@ class JobPoster extends Component {
                   details: this.state.details,
                   visa: this.state.visa,
                   apply: this.state.applyUrl,
-                  category: '',
+                  category: this.state.category,
                   fresh: false
                 },
                 id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + Date.now(),

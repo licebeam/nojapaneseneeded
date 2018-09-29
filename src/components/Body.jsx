@@ -13,6 +13,7 @@ const BodyContainer = styled.div`
     font-size: 1rem;
     color: red;
     margin-top: 80px;
+    padding: 10px;
   }
   .hero-section{
     height: 200px;
@@ -42,21 +43,27 @@ class Body extends Component {
         </div>
         <div className='category'>Engineering</div>
         {
-          filteredJobPosts.map(job => (
-            <JobPost job={job} />
-          ))
+          filteredJobPosts.map(job => {
+            if (job.job.category === 'engineering') return (
+              <JobPost job={job} />
+            )
+          })
         }
         <div className='category'>Education</div>
         {
-          filteredJobPosts.map(job => (
-            <JobPost job={job} />
-          ))
+          filteredJobPosts.map(job => {
+            if (job.job.category === 'education') return (
+              <JobPost job={job} />
+            )
+          })
         }
         <div className='category'>Design</div>
         {
-          filteredJobPosts.map(job => (
-            <JobPost job={job} />
-          ))
+          filteredJobPosts.map(job => {
+            if (job.job.category === 'design') return (
+              <JobPost job={job} />
+            )
+          })
         }
       </BodyContainer >
     );
