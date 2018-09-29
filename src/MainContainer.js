@@ -3,6 +3,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Body from './components/Body';
 import JobPage from './components/JobPage';
+import JobPoster from './components/JobPoster'
 import styled from 'styled-components';
 import './index.css';
 import {
@@ -93,6 +94,10 @@ class MainContainer extends Component {
         <Router>
           <div>
             <Header />
+            <Route exact path="/Post" render={() =>
+              <JobPoster />
+            }
+            />
             <Route exact path="/" render={() =>
               <Body jobPosts={this.state.jobPosts} />
             }

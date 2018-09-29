@@ -46,6 +46,9 @@ class Header extends Component {
         <div className="nav">
           <div className="nav-item">Categories</div>
           <div className="nav-item">Community</div>
+          <Link to='/Post'>
+            <div className="nav-item">Post a Job</div>
+          </Link>
         </div>
       </HeaderBody>
     );
