@@ -14,7 +14,25 @@ const JobPosterContainer = styled.div`
     display: flex; 
     flex-direction: column;
     margin-bottom: 40px;
-    
+    input{
+      height: 40px;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    textarea{
+       height: 200px;
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    button{
+      border-radius: 30px;
+      width: 100px;
+      height: 40px;
+      background-color: red;
+      color: whitesmoke;
+      text-align: center;
+      align-self: center;
+    }
   }
 `
 class JobPoster extends Component {
