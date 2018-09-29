@@ -81,6 +81,16 @@ class JobPoster extends Component {
     return (
       <JobPosterContainer>
         <div className="top-section">
+          <div>Add a new job</div>
+          <div>Title</div>
+          <div>Description</div>
+          <div>Location</div>
+          <div>Date</div>
+          <div>Logo</div>
+          <div>Details</div>
+          <div>Visa Info</div>
+          <div>Apply</div>
+          <div>Category</div>
           <button onClick={() => { console.log('postin'), postNewJob(this.state.newPost) }}>Post Job</button>
         </div>
       </JobPosterContainer >

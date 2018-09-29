@@ -23,23 +23,14 @@ var config = {
 // Stripe.setPublishableKey('pk_test_CWyqPoVSOaiho82ozXTYlPEx');
 
 firebase.initializeApp(config);
-// Initialize Cloud Firestore through Firebase
-// var ui = new firebaseui.auth.AuthUI(firebase.auth());
-// Configure FirebaseUI.
 const uiConfig = {
-  // Popup signin flow rather than redirect flow.
   signInFlow: 'popup',
-  // Redirect to /signedIn after sign in is successful. Alternatively you can provide a callbacks.signInSuccess function.
   signInSuccessUrl: '/Home',
-  // We will display Google and Facebook as auth providers.
   signInOptions: [
     firebase.auth.GoogleAuthProvider.PROVIDER_ID,
     firebase.auth.FacebookAuthProvider.PROVIDER_ID
   ]
 };
-// The start method will wait until the DOM is loaded
-
-// ui.start('#firebaseui-auth-container', uiConfig);
 const firestore = firebase.firestore();
 const settings = {/* your settings... */ timestampsInSnapshots: true };
 firestore.settings(settings);
@@ -56,16 +47,16 @@ class MainContainer extends Component {
     jobPosts: [
       {
         job: {
-          title: 'Google',
-          description: 'Engineer',
-          location: 'Tokyo',
-          date: 'Sep 1',
-          logo: 'https://zdnet1.cbsistatic.com/hub/i/2015/09/01/cb834e24-18e7-4f0a-a9bf-4c2917187d3f/83bb139aac01023dbf3e55a3d1789ad8/google-new-logo.png',
-          details: '100 years of experience with react',
-          visa: 'Visa Sponsorship Available',
-          apply: 'https://www.google.com',
-          category: "Programming",
-          fresh: true
+          title: '',
+          description: '',
+          location: '',
+          date: '',
+          logo: '',
+          details: '',
+          visa: '',
+          apply: '',
+          category: "",
+          fresh: false
         },
         id: 1
       },
