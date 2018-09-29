@@ -1,0 +1,61 @@
+[debug] [2018-09-29T09:33:08.248Z] ----------------------------------------------------------------------
+[debug] [2018-09-29T09:33:08.251Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy
+[debug] [2018-09-29T09:33:08.251Z] CLI Version:   3.19.3
+[debug] [2018-09-29T09:33:08.251Z] Platform:      darwin
+[debug] [2018-09-29T09:33:08.251Z] Node Version:  v8.11.2
+[debug] [2018-09-29T09:33:08.252Z] Time:          Sat Sep 29 2018 18:33:08 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:08.252Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-09-29T09:33:08.263Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-09-29T09:33:08.263Z] > authorizing via signed-in user
+[debug] [2018-09-29T09:33:08.265Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-09-29T09:33:08.265Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ { refresh_token: '1/b-T00gFSeQH2_jodEWItPUOcBMuaDSYoiyfRtqRTCMM',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sat Sep 29 2018 18:33:08 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:08.440Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T09:33:08.456Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/nojapaneserequired  
+  
+ Sat Sep 29 2018 18:33:08 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:09.238Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T09:33:09.238Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/nojapaneserequired/tokens  
+  
+ Sat Sep 29 2018 18:33:09 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:09.948Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'nojapaneserequired'...
+[info] 
+[info] i  deploying firestore, hosting
+[info] i  firestore: checking firestore.rules for compilation errors...
+[debug] [2018-09-29T09:33:10.968Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/nojapaneserequired:test  
+ { source: { files: [ [Object] ] } } 
+ Sat Sep 29 2018 18:33:10 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:12.186Z] <<< HTTP RESPONSE 200
+[info] ✔  firestore: rules file firestore.rules compiled successfully
+[info] i  firestore: uploading rules firestore.rules...
+[debug] [2018-09-29T09:33:12.191Z] >>> HTTP REQUEST POST https://firebaserules.googleapis.com/v1/projects/nojapaneserequired/rulesets  
+ { source: { files: [ [Object] ] } } 
+ Sat Sep 29 2018 18:33:12 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:12.192Z] >>> HTTP REQUEST GET https://firestore.googleapis.com/v1beta1/projects/nojapaneserequired/databases/(default)/indexes  
+  
+ Sat Sep 29 2018 18:33:12 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:12.536Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T09:33:13.526Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T09:33:13.526Z] [rules] created ruleset projects/nojapaneserequired/rulesets/1f061172-c564-488c-bf4b-a7a7989b12aa
+[info] i  hosting: preparing build directory for upload...
+[debug] [2018-09-29T09:33:13.887Z] >>> HTTP REQUEST PUT https://deploy.firebase.com/v1/hosting/nojapaneserequired/uploads/-LNZfAieColtRLqVxC8V?fileCount=10&message=  
+  
+ Sat Sep 29 2018 18:33:13 GMT+0900 (JST)
+[debug] [2018-09-29T09:33:21.731Z] <<< HTTP RESPONSE 200
+[debug] [2018-09-29T09:33:21.731Z] [hosting] .tgz uploaded successfully, waiting for extraction
+[info] ✔  hosting: 10 files uploaded successfully
+[debug] [2018-09-29T09:33:23.351Z] [hosting] deploy completed after 9824ms
+[debug] [2018-09-29T09:33:23.485Z] [rules] releasing cloud.firestore with ruleset projects/nojapaneserequired/rulesets/1f061172-c564-488c-bf4b-a7a7989b12aa
+[debug] [2018-09-29T09:33:23.486Z] >>> HTTP REQUEST PATCH https://firebaserules.googleapis.com/v1/projects/nojapaneserequired/releases/cloud.firestore  
+ { release: 
+   { name: 'projects/nojapaneserequired/releases/cloud.firestore',
+     rulesetName: 'projects/nojapaneserequired/rulesets/1f061172-c564-488c-bf4b-a7a7989b12aa' } } 
+ Sat Sep 29 2018 18:33:23 GMT+0900 (JST)
