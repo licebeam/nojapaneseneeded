@@ -34,7 +34,7 @@ const Job = styled.div`
     }
   }
    .title{
-      font-size: 1.5rem;
+      font-size: 1.2rem;
       padding: 10px;
       font-weight: bold;
     }
@@ -47,6 +47,7 @@ const Job = styled.div`
     display: flex;
     flex-direction: row; 
     padding: 20px;
+    margin-top: 20px;
     align-items: center;
     .location{
        font-size: 0.8rem;
@@ -65,6 +66,7 @@ const Job = styled.div`
       flex: 1;
       text-align: center;
       border-radius: 20px;
+      margin-left: 10px;
     }
     .old{
       height: 10px;
@@ -86,7 +88,7 @@ class JobPost extends Component {
               <img className="image" src={job.job.logo} alt='' />
             </div>
             <div className="title">{job.job.title.slice(0, 10)}</div>
-            <div className="description">{job.job.description.slice(0, 10)}</div>
+            <div className="description">{job.job.description.slice(0, 20)}</div>
           </div>
           <div className="bottom">
             <div className="location">{job.job.location.slice(0, 10)}</div>
