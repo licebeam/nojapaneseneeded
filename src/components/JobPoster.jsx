@@ -59,39 +59,57 @@ const JobPosterContainer = styled.div`
 `
 class JobPoster extends Component {
   state = {
-    newPost:
-      {
-        job: {
-          title: '',
-          description: '',
-          location: '',
-          date: '',
-          logo: '',
-          details: '',
-          visa: '',
-          apply: '',
-          category: '',
-          fresh: false
-        },
-        id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + Date.now(),
-      },
+    jobTitle: '',
+    positionTitle: '',
+    location: '',
+    logoUrl: '',
+    details: '',
+    visa: '',
+    applyUrl: '',
+    category: '',
   }
   render() {
     const { job, postNewJob } = this.props
+    console.log(this.state.jobTitle)
+    const date = new Date().toLocaleDateString();
     return (
       <JobPosterContainer>
         <div className="top-section">
           <div>Add a new job</div>
-          <div>Title</div>
-          <div>Description</div>
+          <div>Company Name</div>
+          <input type="text" onChange={(e) => { this.setState({ jobTitle: e.target.value }) }} />
+          <div>Job Title</div>
+          <input type="text" onChange={(e) => { this.setState({ positionTitle: e.target.value }) }} />
           <div>Location</div>
-          <div>Date</div>
+          <input type="text" onChange={(e) => { this.setState({ location: e.target.value }) }} />
           <div>Logo</div>
+          <input type="text" onChange={(e) => { this.setState({ logoUrl: e.target.value }) }} />
           <div>Details</div>
+          <textarea type="text" onChange={(e) => { this.setState({ details: e.target.value }) }} />
           <div>Visa Info</div>
+          <input type="text" onChange={(e) => { this.setState({ visa: e.target.value }) }} />
           <div>Apply</div>
+          <input type="text" onChange={(e) => { this.setState({ applyUrl: e.target.value }) }} />
           <div>Category</div>
-          <button onClick={() => { console.log('postin'), postNewJob(this.state.newPost) }}>Post Job</button>
+          <input type="text" onChange={(e) => { this.setState({ category: e.target.value }) }} />
+          <button onClick={() => {
+            console.log('postin'),
+              postNewJob({
+                job: {
+                  title: this.state.jobTitle,
+                  description: this.state.positionTitle,
+                  location: this.state.location,
+                  date: date,
+                  logo: this.state.logoUrl,
+                  details: this.state.details,
+                  visa: this.state.visa,
+                  apply: this.state.applyUrl,
+                  category: '',
+                  fresh: false
+                },
+                id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + Date.now(),
+              })
+          }}>Post Job</button>
         </div>
       </JobPosterContainer >
     );
