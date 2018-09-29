@@ -3,6 +3,10 @@ import JobPost from './JobPost';
 import styled from 'styled-components';
 
 const JobPosterContainer = styled.div`
+@media (min-width: 800px) {
+  width: 60%;
+  margin: 0 auto;
+  }
   background-color: whitesmoke;
   .top-section{
     height: 100%;

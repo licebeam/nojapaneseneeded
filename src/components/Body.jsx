@@ -5,7 +5,7 @@ import photo from './photo.jpg'
 
 const BodyContainer = styled.div`
 @media (min-width: 800px) {
-  width: 80%;
+  width: 60%;
   margin: 0 auto;
   }
   background-color: whitesmoke;
@@ -13,11 +13,11 @@ const BodyContainer = styled.div`
     height: 200px;
     text-align: center;
     padding: 80px;
-    background-image: url(${photo});
+    /* background-image: url(${photo}); */
     background-size: cover;
     background-repeat: no-repeat;
     font-size: 1rem;
-    color: whitesmoke;
+    color: black;
   }
 `
 class Body extends Component {
