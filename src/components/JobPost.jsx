@@ -13,14 +13,12 @@ const Job = styled.div`
   border-bottom: 2px solid grey;
   display: flex;
   flex-direction: column;
-  a{
-    text-decoration: none !important;
-   }
   &:hover{
     opacity: 0.8;
     background-color: lightgray;
   }
   .top{  
+    margin-top: 20px;
     display: flex;
     flex-direction: row; 
     align-items: center;

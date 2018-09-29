@@ -7,31 +7,53 @@ const JobPageContainer = styled.div`
   .top-section{
     height: 100%;
     padding: 20px;
-    .title{
+    display: flex; 
+    flex-direction: column;
+    margin-bottom: 40px;
+    .logo-title{
+      margin-top: 20px;
+      height: 100px;
+      display: flex;
+      flex-direction: row;
+       align-items: center;
+      .title{
       font-size: 2rem;
+      padding: 10px;
     }
       .logo{
-    border-radius: 50%;
-    height: 60px;
-    width: 60px;
-    overflow: hidden;
-    .image{
-      object-fit: cover;
+      border-radius: 50%;
       height: 60px;
       width: 60px;
+      overflow: hidden;
+      .image{
+        object-fit: cover;
+        height: 60px;
+        width: 60px;
+      }
     }
-  }
+    }   
   .description{
+    flex: 1;
+      margin-top:20px;
       font-size: 1.5rem;
     }
   .location{
+    flex: 1;
+    margin-top:20px;
     font-size: 1.5rem;
+    color: grey;
+    margin-bottom: 40px;
   }
   .date{
     font-size: 1.5rem;
+    color: grey;
+    padding: 20px;
   }
   .category{
     font-size: .8rem;
+  }
+  .details{
+    height: 300px;
   }
   }
 `
@@ -41,19 +63,23 @@ class JobPage extends Component {
     return (
       <JobPageContainer>
         <div className="top-section">
-          <div className='title'>{job.job.title}</div>
-          <div className="logo">
-            <img className="image" src={job.job.logo} alt={job.job.title} />
+          <div className="logo-title">
+            <div className="logo">
+              <img className="image" src={job.job.logo} alt={job.job.title} />
+            </div>
+            <div className='title'>{job.job.title}</div>
+            <div className='date'>{job.job.date}</div>
           </div>
           <div className='description'>{job.job.description}</div>
           <div className="category">{job.job.category}</div>
           <div className='location'>{job.job.location}</div>
-          <p>date posted:</p>
-          <div className='date'>{job.job.date}</div>
-          <h2>What we are looking for:</h2>
-          <div>
-            {job.job.details}
+          <div className="details">
+            <h2>What we are looking for:</h2>
+            <div>
+              {job.job.details}
+            </div>
           </div>
+
           <h2>Visa Requirements:</h2>
           <div>
             {job.job.visa}
