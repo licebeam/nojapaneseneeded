@@ -9,7 +9,7 @@ const JobPageContainer = styled.div`
   }
   background-color: whitesmoke;
   .top-section{
-    height: 100%;
+    min-height: 800px;
     padding: 20px;
     display: flex; 
     flex-direction: column;
@@ -69,7 +69,7 @@ class JobPage extends Component {
         <div className="top-section">
           <div className="logo-title">
             <div className="logo">
-              <img className="image" src={job.job.logo} alt={job.job.title} />
+              <img className="image" src={job.job.logo} alt='' />
             </div>
             <div className='title'>{job.job.title}</div>
             <div className='date'>{job.job.date}</div>
