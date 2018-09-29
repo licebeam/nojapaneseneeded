@@ -71,9 +71,11 @@ class MainContainer extends Component {
       },
     ]
   }
+
   componentDidMount() {
     this.getJobPosts();
   }
+
   getJobPosts = () => {
     console.log('getting jobs')
     db.collection("jobs")
@@ -88,6 +90,13 @@ class MainContainer extends Component {
         console.log("Error getting documents: ", error);
       });
   }
+
+  postNewJob = (jobObject) => {
+    db.collection('jobs').doc('jobdoc').update({
+      jobPosts: firebase.firestore.FieldValue.arrayUnion(jobObject)
+    })
+  }
+
   render() {
     return (
       <Container>
@@ -95,7 +104,7 @@ class MainContainer extends Component {
           <div>
             <Header />
             <Route exact path="/Post" render={() =>
-              <JobPoster />
+              <JobPoster postNewJob={this.postNewJob} />
             }
             />
             <Route exact path="/" render={() =>

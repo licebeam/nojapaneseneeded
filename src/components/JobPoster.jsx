@@ -58,36 +58,30 @@ const JobPosterContainer = styled.div`
   }
 `
 class JobPoster extends Component {
+  state = {
+    newPost:
+      {
+        job: {
+          title: '',
+          description: '',
+          location: '',
+          date: '',
+          logo: '',
+          details: '',
+          visa: '',
+          apply: '',
+          category: '',
+          fresh: false
+        },
+        id: Math.random().toString(36).replace(/[^a-z]+/g, '').substr(2, 10) + Date.now(),
+      },
+  }
   render() {
-    const { job } = this.props
+    const { job, postNewJob } = this.props
     return (
       <JobPosterContainer>
         <div className="top-section">
-          <div className="logo-title">
-            <div className="logo">
-              {/* <img className="image" src={job.job.logo} alt={job.job.title} /> */}
-            </div>
-            {/* <div className='title'>{job.job.title}</div>
-            <div className='date'>{job.job.date}</div> */}
-          </div>
-          {/* <div className='description'>{job.job.description}</div>
-          <div className="category">{job.job.category}</div>
-          <div className='location'>{job.job.location}</div> */}
-          <div className="details">
-            <h2>What we are looking for:</h2>
-            <div>
-              {/* {job.job.details} */}
-            </div>
-          </div>
-
-          <h2>Visa Requirements:</h2>
-          <div>
-            {/* {job.job.visa} */}
-          </div>
-          <h2>Apply:</h2>
-          <div>
-            {/* <a target="_blank" href={job.job.apply}>{job.job.apply}</a> */}
-          </div>
+          <button onClick={() => { console.log('postin'), postNewJob(this.state.newPost) }}>Post Job</button>
         </div>
       </JobPosterContainer >
     );
