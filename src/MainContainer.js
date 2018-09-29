@@ -74,6 +74,17 @@ class MainContainer extends Component {
   }
   getJobPosts = () => {
     console.log('getting jobs')
+    db.collection("jobs")
+      .get()
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          console.log(doc.data())
+          this.setState({ jobPosts: doc.data().jobPosts })
+        });
+      })
+      .catch(function (error) {
+        console.log("Error getting documents: ", error);
+      });
   }
   render() {
     return (
@@ -85,12 +96,12 @@ class MainContainer extends Component {
               <Body jobPosts={this.state.jobPosts} />
             }
             />
-            {this.state.jobPosts.map(job => {
+            {this.state.jobPosts ? this.state.jobPosts.map(job => {
               return <Route exact path={'/Job/' + job.id} render={() =>
                 <JobPage job={job} />
               }
               />
-            })}
+            }) : null}
             < Footer />
           </div >
         </Router >
