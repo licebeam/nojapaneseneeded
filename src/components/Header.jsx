@@ -8,11 +8,9 @@ const HeaderBody = styled.div`
 class Header extends Component {
   render() {
     return (
-      <div className="Header">
-        <HeaderBody className="Header-header">
-          <h1 className="Header-title">Job Board</h1>
-        </HeaderBody>
-      </div>
+      <HeaderBody className="Header-header">
+        <h1 className="Header-title">Job Board</h1>
+      </HeaderBody>
     );
   }
 }
