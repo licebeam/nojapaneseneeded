@@ -7,8 +7,8 @@ import {
 } from 'react-router-dom'
 
 const HeaderBody = styled.div`
-  background-color: purple;
-  color: black;
+  background-color: black;
+  color: white;
   display: flex;
   font-size: 1rem;
   flex-direction: row;
@@ -17,9 +17,9 @@ const HeaderBody = styled.div`
    }
   .header-title{
     font-family: 'Anton', sans-serif;
+    letter-spacing: 2px;
     color: white;
     padding: 10px;
-    font-weight: bold;
     font-size: 1.2rem;
   }
   .nav{
