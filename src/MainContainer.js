@@ -25,9 +25,10 @@ class MainContainer extends Component {
           location: 'Tokyo',
           date: 'Sep 1',
           logo: 'https://zdnet1.cbsistatic.com/hub/i/2015/09/01/cb834e24-18e7-4f0a-a9bf-4c2917187d3f/83bb139aac01023dbf3e55a3d1789ad8/google-new-logo.png',
-          details: '',
-          visa: '',
-          apply: '',
+          details: ' 100 years of experience with react',
+          visa: 'Visa Sponsorship Available',
+          apply: 'https://www.google.com',
+          category: "Programming",
           fresh: true
         },
         id: 1

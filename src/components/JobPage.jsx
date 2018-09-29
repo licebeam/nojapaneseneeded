@@ -30,6 +30,9 @@ const JobPageContainer = styled.div`
   .date{
     font-size: 1.5rem;
   }
+  .category{
+    font-size: .8rem;
+  }
   }
 `
 class JobPage extends Component {
@@ -42,23 +45,22 @@ class JobPage extends Component {
           <div className="logo">
             <img className="image" src={job.job.logo} alt={job.job.title} />
           </div>
-          <p>job title:</p>
           <div className='description'>{job.job.description}</div>
-          <p>location:</p>
+          <div className="category">{job.job.category}</div>
           <div className='location'>{job.job.location}</div>
           <p>date posted:</p>
           <div className='date'>{job.job.date}</div>
-          <p>details:</p>
+          <h2>What we are looking for:</h2>
           <div>
             {job.job.details}
           </div>
-          <p>visa requirements:</p>
+          <h2>Visa Requirements:</h2>
           <div>
             {job.job.visa}
           </div>
-          <p>application link:</p>
+          <h2>Apply:</h2>
           <div>
-            {job.job.apply}
+            <a target="_blank" href={job.job.apply}>{job.job.apply}</a>
           </div>
         </div>
       </JobPageContainer >
