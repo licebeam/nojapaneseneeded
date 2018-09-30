@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobPost from './JobPost';
 import styled from 'styled-components';
+import MyEditor from './MyEditor'
 
 const JobPosterContainer = styled.div`
 @media (min-width: 800px) {
@@ -46,6 +47,7 @@ class JobPoster extends Component {
     applyUrl: '',
     category: '',
   }
+  editorOnChange = (editorState) => this.setState({ editorState });
   render() {
     const { job, postNewJob } = this.props
     const date = new Date().toLocaleDateString();
@@ -62,7 +64,8 @@ class JobPoster extends Component {
           <div>Logo</div>
           <input type="text" onChange={(e) => { this.setState({ logoUrl: e.target.value }) }} />
           <div>Details</div>
-          <textarea type="text" onChange={(e) => { this.setState({ details: e.target.value }) }} />
+          {/* <textarea type="text" onChange={(e) => { this.setState({ details: e.target.value }) }} /> */}
+          <MyEditor />
           <div>Visa Info</div>
           <input type="text" onChange={(e) => { this.setState({ visa: e.target.value }) }} />
           <div>Apply</div>
