@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Editor, EditorState } from 'draft-js';
-import 'draft-js/dist/Draft.css';
+import '../components/Draft.css';
 class MyEditor extends React.Component {
   constructor(props) {
     super(props);
