@@ -7,12 +7,14 @@ import {
 } from 'react-router-dom'
 
 const Job = styled.div`
-  background-color: whitesmoke;
+
+  background-color: ${props => props.featured ? 'yellow' : 'whitesmoke'};
   height: 80px;
   padding: 10px;
   border-bottom: 1px solid grey;
   display: flex;
   flex-direction: column;
+  transition: .4s all;
   &:hover{
     opacity: 0.8;
     background-color: lightgray;
@@ -82,7 +84,7 @@ class JobPost extends Component {
     const { job } = this.props
     return (
       <Link to={'/Job/' + job.id}>
-        <Job>
+        <Job featured={job.job.featured}>
           <div className="top">
             <div className="logo">
               <img className="image" src={job.job.logo} alt='' />

@@ -7,8 +7,12 @@ import {
 } from 'react-router-dom'
 
 const HeaderBody = styled.div`
-  background-color: black;
-  color: white;
+@media (min-width: 800px) {
+  width: 60%;
+  margin: 0 auto;
+  }
+  background-color: whitesmoke;
+  color: black;
   display: flex;
   font-size: 1rem;
   flex-direction: row;
@@ -16,13 +20,15 @@ const HeaderBody = styled.div`
     text-decoration: none !important;
    }
   .header-title{
-    font-family: 'Roboto', sans-serif;
+    flex: 4;
+    font-family: 'Archivo Black', sans-serif;
     font-weight: bold;
-    color: white;
+    color: black;
     padding: 10px;
-    font-size: 1.2rem;
+    font-size: 2rem;
   }
   .nav{
+    flex:1;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -41,11 +47,11 @@ class Header extends Component {
     return (
       <HeaderBody className="Header-header">
         <Link to='/'>
-          <div className="header-title">NJN</div>
+          <div className="header-title">No Japanese Needed</div>
         </Link>
         <div className="nav">
-          <div className="nav-item">Categories</div>
-          <div className="nav-item">Community</div>
+          {/* <div className="nav-item">Categories</div>
+          <div className="nav-item">Community</div> */}
           <Link to='/Post'>
             <div className="nav-item">Post a Job</div>
           </Link>

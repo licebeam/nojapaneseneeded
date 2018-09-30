@@ -10,9 +10,10 @@ const BodyContainer = styled.div`
   }
   background-color: whitesmoke;
   .category{
-    font-size: 1rem;
+    font-size: 1.3rem;
     color: red;
     margin-top: 80px;
+    font-family: 'Archivo Black', sans-serif;
     padding: 10px;
   }
   .hero-section{
@@ -27,9 +28,8 @@ const BodyContainer = styled.div`
     .hero-title{
      font-size:  2rem;
      color: red;
-     font-family: 'Roboto', sans-serif;
+     font-family: 'Archivo Black', sans-serif;
      font-weight: bold;
-     border-bottom: 1px solid red;
      margin-bottom: 20px
     }
   }
@@ -41,7 +41,7 @@ class Body extends Component {
     return (
       <BodyContainer>
         <div className="hero-section">
-          <div className='hero-title'>No Japanese Needed</div>
+          <div className='hero-title'>Find your next Job in Japan!</div>
           <div className='hero-subtext'>Looking for a job in Japan but your Japanese skills are lacking?</div>
           <div className='ad-container'></div>
         </div>
