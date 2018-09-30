@@ -17,7 +17,7 @@ const BodyContainer = styled.div`
     padding: 10px;
   }
   .hero-section{
-    height: 100px;
+    min-height: 100px;
     text-align: center;
     padding: 80px;
     /* background-image: url(${photo}); */
@@ -42,7 +42,7 @@ class Body extends Component {
       <BodyContainer>
         <div className="hero-section">
           <div className='hero-title'>Find your next job in Japan!</div>
-          <div className='hero-subtext'>The best and only job board for people starting out their lives in Japan.</div>
+          <div className='hero-subtext'>The best and only job board for people starting out their lives in Japan. If you are still learning Japanese you've come to the right place</div>
           <div className='ad-container'></div>
         </div>
         <div className='category'>Engineering</div>
