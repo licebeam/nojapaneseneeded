@@ -8,7 +8,7 @@ import {
 
 const Job = styled.div`
 
-  background-color: ${props => props.featured ? 'yellow' : 'whitesmoke'};
+  background-color: ${props => props.featured ? 'lightyellow' : 'whitesmoke'};
   height: 80px;
   padding: 10px;
   border-bottom: 1px solid grey;
@@ -17,7 +17,7 @@ const Job = styled.div`
   transition: .4s all;
   &:hover{
     opacity: 0.8;
-    background-color: lightgray;
+    background-color:  ${props => props.featured ? 'yellow' : 'lightblue'};
   }
   .top{  
     margin-top: 20px;
@@ -54,6 +54,8 @@ const Job = styled.div`
     .location{
        font-size: 0.8rem;
         flex: 3;
+        margin-left: 40px;
+        color: grey;
     }
     .date{
       font-size: 1rem;

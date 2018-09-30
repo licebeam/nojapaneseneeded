@@ -5,7 +5,7 @@ import photo from './photo.jpg'
 
 const BodyContainer = styled.div`
 @media (min-width: 800px) {
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   }
   background-color: whitesmoke;
@@ -17,7 +17,7 @@ const BodyContainer = styled.div`
     padding: 10px;
   }
   .hero-section{
-    height: 200px;
+    height: 100px;
     text-align: center;
     padding: 80px;
     /* background-image: url(${photo}); */
@@ -26,7 +26,7 @@ const BodyContainer = styled.div`
     font-size: 1rem;
     color: black;
     .hero-title{
-     font-size:  2rem;
+     font-size:  3rem;
      color: red;
      font-family: 'Archivo Black', sans-serif;
      font-weight: bold;
@@ -41,8 +41,8 @@ class Body extends Component {
     return (
       <BodyContainer>
         <div className="hero-section">
-          <div className='hero-title'>Find your next Job in Japan!</div>
-          <div className='hero-subtext'>Looking for a job in Japan but your Japanese skills are lacking?</div>
+          <div className='hero-title'>Find your next job in Japan!</div>
+          <div className='hero-subtext'>The best and only job board for people starting out their lives in Japan.</div>
           <div className='ad-container'></div>
         </div>
         <div className='category'>Engineering</div>

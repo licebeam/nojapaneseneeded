@@ -7,11 +7,11 @@ const FooterContainer = styled.div`
   margin: 0 auto;
   }
   height: 200px;
-  background-color: black;
-  color: whitesmoke;
+  background-color: whitesmoke;
+  color: darkgrey;
   .footer-text{
     padding: 40px;
-  }
+    text-align: center;
 `
 class Footer extends Component {
   render() {

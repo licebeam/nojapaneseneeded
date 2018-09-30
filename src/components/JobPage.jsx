@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const JobPageContainer = styled.div`
 @media (min-width: 800px) {
-  width: 60%;
+  width: 40%;
   margin: 0 auto;
   }
   background-color: whitesmoke;

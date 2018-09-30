@@ -26,6 +26,10 @@ const HeaderBody = styled.div`
     color: black;
     padding: 10px;
     font-size: 2rem;
+    transition: .2s all;
+    &:hover{
+        color: red;
+      }
   }
   .nav{
     flex:1;
