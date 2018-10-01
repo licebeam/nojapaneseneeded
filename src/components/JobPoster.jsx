@@ -47,6 +47,9 @@ class JobPoster extends Component {
     applyUrl: '',
     category: '',
   }
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   editorOnChange = (editorState) => this.setState({ editorState });
   render() {
     const { job, postNewJob } = this.props

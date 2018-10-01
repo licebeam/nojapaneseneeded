@@ -62,6 +62,9 @@ const JobPageContainer = styled.div`
   }
 `
 class JobPage extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0)
+  }
   render() {
     const { job } = this.props
     return (

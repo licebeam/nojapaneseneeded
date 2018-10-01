@@ -44,7 +44,7 @@ const Container = styled.div`
   overflow: auto; 
 `
 const RoutesContainer = posed.div({
-  enter: { y: 0, opacity: 1, delay: 300, beforeChildren: true },
+  enter: { y: 0, opacity: 1, delay: 100, beforeChildren: true },
   exit: {
     y: 50,
     opacity: 0,
@@ -53,6 +53,7 @@ const RoutesContainer = posed.div({
 });
 class MainContainer extends Component {
   state = {
+    isVisible: false,
     jobPosts: [
       {
         job: {
@@ -74,6 +75,11 @@ class MainContainer extends Component {
 
   componentDidMount() {
     this.getJobPosts();
+    setTimeout(() => {
+      this.setState({
+        isVisible: !this.state.isVisible
+      });
+    }, 500);
   }
 
   getJobPosts = () => {
@@ -96,36 +102,34 @@ class MainContainer extends Component {
   }
 
   render() {
+    const { isVisible } = this.state;
     return (
-
-
       <Container>
-        <Router>
+        <Router onUpdate={() => window.scrollTo(0, 0)}>
           <Route
             render={({ location }) => (
               <div>
                 <Header />
                 <PoseGroup>
-                  <RoutesContainer key={location.key}>
-                    <Route exact path="/Post" render={(location) =>
-                      <JobPoster postNewJob={this.postNewJob} />
-                    }
-                    />
-                  </RoutesContainer>
-                </PoseGroup >
-                <PoseGroup>
-                  <RoutesContainer key={location.key}>
-                    <Route exact path="/" render={() =>
-                      <Body jobPosts={this.state.jobPosts} />
-                    }
-                    />
-                    {this.state.jobPosts ? this.state.jobPosts.map(job => {
-                      return <Route exact path={'/Job/' + job.id} render={() =>
-                        <JobPage job={job} />
+                  {isVisible && [
+                    <RoutesContainer key={location.key}>
+                      <Route exact path="/Post" render={(location) =>
+                        <JobPoster postNewJob={this.postNewJob} />
                       }
                       />
-                    }) : null}
-                  </RoutesContainer>
+
+                      <Route exact path="/" render={() =>
+                        <Body jobPosts={this.state.jobPosts} />
+                      }
+                      />
+                      {this.state.jobPosts ? this.state.jobPosts.map(job => {
+                        return <Route exact path={'/Job/' + job.id} render={() =>
+                          <JobPage job={job} />
+                        }
+                        />
+                      }) : null}
+                    </RoutesContainer>
+                  ]}
                 </PoseGroup >
                 < Footer />
               </div >
