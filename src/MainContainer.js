@@ -105,7 +105,7 @@ class MainContainer extends Component {
     const { isVisible } = this.state;
     return (
       <Container>
-        <Router onUpdate={() => window.scrollTo(0, 0)}>
+        <Router>
           <Route
             render={({ location }) => (
               <div>
