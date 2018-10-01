@@ -5,6 +5,7 @@ import Body from './components/Body';
 import JobPage from './components/JobPage';
 import JobPoster from './components/JobPoster'
 import styled from 'styled-components';
+import posed, { PoseGroup } from 'react-pose';
 import './index.css';
 import {
   BrowserRouter as Router,
@@ -42,6 +43,14 @@ const Container = styled.div`
   flex-direction: column;
   overflow: auto; 
 `
+const RoutesContainer = posed.div({
+  enter: { y: 0, opacity: 1, delay: 300, beforeChildren: true },
+  exit: {
+    y: 50,
+    opacity: 0,
+    transition: { duration: 200 }
+  }
+});
 class MainContainer extends Component {
   state = {
     jobPosts: [
@@ -88,28 +97,43 @@ class MainContainer extends Component {
 
   render() {
     return (
+
+
       <Container>
         <Router>
-          <div>
-            <Header />
-            <Route exact path="/Post" render={() =>
-              <JobPoster postNewJob={this.postNewJob} />
-            }
-            />
-            <Route exact path="/" render={() =>
-              <Body jobPosts={this.state.jobPosts} />
-            }
-            />
-            {this.state.jobPosts ? this.state.jobPosts.map(job => {
-              return <Route exact path={'/Job/' + job.id} render={() =>
-                <JobPage job={job} />
-              }
-              />
-            }) : null}
-            < Footer />
-          </div >
+          <Route
+            render={({ location }) => (
+              <div>
+                <Header />
+                <PoseGroup>
+                  <RoutesContainer key={location.key}>
+                    <Route exact path="/Post" render={(location) =>
+                      <JobPoster postNewJob={this.postNewJob} />
+                    }
+                    />
+                  </RoutesContainer>
+                </PoseGroup >
+                <PoseGroup>
+                  <RoutesContainer key={location.key}>
+                    <Route exact path="/" render={() =>
+                      <Body jobPosts={this.state.jobPosts} />
+                    }
+                    />
+                    {this.state.jobPosts ? this.state.jobPosts.map(job => {
+                      return <Route exact path={'/Job/' + job.id} render={() =>
+                        <JobPage job={job} />
+                      }
+                      />
+                    }) : null}
+                  </RoutesContainer>
+                </PoseGroup >
+                < Footer />
+              </div >
+            )}
+          />
         </Router >
       </Container>
+
 
     );
   }
