@@ -44,12 +44,12 @@ const Container = styled.div`
   overflow: auto; 
 `
 const RoutesContainer = posed.div({
-  enter: { y: 0, opacity: 1, delay: 100, beforeChildren: true },
-  exit: {
-    y: 50,
-    opacity: 0,
-    transition: { duration: 200 }
-  }
+  // enter: { y: 0, opacity: 1, delay: 100, beforeChildren: true },
+  // exit: {
+  //   y: 50,
+  //   opacity: 0,
+  //   transition: { duration: 200 }
+  // }
 });
 class MainContainer extends Component {
   state = {
@@ -111,25 +111,23 @@ class MainContainer extends Component {
               <div>
                 <Header />
                 <PoseGroup>
-                  {isVisible && [
-                    <RoutesContainer key={location.key}>
-                      <Route exact path="/Post" render={(location) =>
-                        <JobPoster postNewJob={this.postNewJob} />
-                      }
-                      />
+                  <RoutesContainer key={location.key}>
+                    <Route exact path="/Post" render={(location) =>
+                      <JobPoster postNewJob={this.postNewJob} />
+                    }
+                    />
 
-                      <Route exact path="/" render={() =>
-                        <Body jobPosts={this.state.jobPosts} />
+                    <Route exact path="/" render={() =>
+                      <Body jobPosts={this.state.jobPosts} />
+                    }
+                    />
+                    {this.state.jobPosts ? this.state.jobPosts.map(job => {
+                      return <Route exact path={'/Job/' + job.id} render={() =>
+                        <JobPage job={job} />
                       }
                       />
-                      {this.state.jobPosts ? this.state.jobPosts.map(job => {
-                        return <Route exact path={'/Job/' + job.id} render={() =>
-                          <JobPage job={job} />
-                        }
-                        />
-                      }) : null}
-                    </RoutesContainer>
-                  ]}
+                    }) : null}
+                  </RoutesContainer>
                 </PoseGroup >
                 < Footer />
               </div >
