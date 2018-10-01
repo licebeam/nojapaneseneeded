@@ -1,3 +1,8 @@
+.editor {
+ border: 1px solid grey;
+ padding: 6px;
+}
+
 /**
  * @providesModule DraftStyleDefault
  * @permanent

@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Editor, EditorState } from 'draft-js';
-import 'draft-js/dist/Draft.css';
+import { Editor, EditorState, RichUtils } from 'draft-js';
+import '/Users/dustinwalker/Desktop/webprojects/job-board/node_modules/draft-js/dist/Draft.css';
+import './draft.css'
 class MyEditor extends React.Component {
   constructor(props) {
     super(props);
@@ -10,9 +11,12 @@ class MyEditor extends React.Component {
   }
   render() {
     return (
-      <Editor editorState={this.state.editorState} onChange={this.onChange} />
+      <div className="editor">
+        <Editor editorState={this.state.editorState} onChange={this.onChange} />
+      </div>
     );
   }
 }
+///TODO ADD RICH UTIL TOGGLES
 
 export default MyEditor
