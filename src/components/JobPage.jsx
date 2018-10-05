@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import JobPost from './JobPost';
 import styled from 'styled-components';
+import Markdown from 'react-markdown';
 
 const JobPageContainer = styled.div`
 @media (min-width: 800px) {
@@ -83,7 +84,10 @@ class JobPage extends Component {
           <div className="details">
             <h2>What we are looking for:</h2>
             <div>
-              {job.job.details}
+              <Markdown
+                escapeHtml={true}
+                source={job.job.details}
+              />
             </div>
           </div>
 
