@@ -64,7 +64,7 @@ class MainContainer extends Component {
           details: '',
           visa: '',
           apply: '',
-          category: "",
+          category: '',
           fresh: false
         },
         id: 1
@@ -96,6 +96,7 @@ class MainContainer extends Component {
   }
 
   render() {
+    const jobsByDate = this.state.jobPosts.reverse(); //reverse posts to display correctly by date
     return (
       <Container>
         <Router>
@@ -111,10 +112,10 @@ class MainContainer extends Component {
                     />
 
                     <Route exact path="/" render={() =>
-                      <Body jobPosts={this.state.jobPosts} />
+                      <Body jobPosts={jobsByDate} />
                     }
                     />
-                    {this.state.jobPosts ? this.state.jobPosts.map(job => {
+                    {jobsByDate ? jobsByDate.map(job => {
                       return <Route exact path={'/Job/' + job.id} render={() =>
                         <JobPage job={job} />
                       }
