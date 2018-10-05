@@ -84,6 +84,7 @@ const Job = styled.div`
 class JobPost extends Component {
   render() {
     const { job } = this.props
+    const today = new Date().toLocaleDateString();
     return (
       <Link to={'/Job/' + job.id}>
         <Job featured={job.job.featured}>
@@ -97,8 +98,8 @@ class JobPost extends Component {
           <div className="bottom">
             <div className="location">{job.job.location.slice(0, 10)}</div>
             <div className="date">{job.job.date}</div>
-            {job.job.fresh ? (
-              <div className="fresh">{job.job.fresh ? 'New' : null}</div>
+            {job.job.date === today ? (
+              <div className="fresh">{job.job.date === today ? 'New' : null}</div>
             ) : <div className="old" />}
           </div>
         </Job>
