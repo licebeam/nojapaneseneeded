@@ -7,9 +7,14 @@ class MyEditor extends React.Component {
   constructor(props) {
     super(props);
     this.state = { editorState: EditorState.createEmpty() };
-    this.onChange = (editorState) => this.setState({ editorState });
+    this.onChange = (editorState) => {
+      this.setState({ editorState });
+      this.props.updateDetails(this.state.editorState.getCurrentContent().getPlainText());
+    };
   }
   render() {
+    const { updateDetails } = this.props;
+    console.log(this.state.editorState.getCurrentContent().getPlainText())
     return (
       <div className="editor">
         <Editor editorState={this.state.editorState} onChange={this.onChange} />

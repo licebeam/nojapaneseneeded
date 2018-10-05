@@ -20,11 +20,6 @@ const JobPosterContainer = styled.div`
       font-size: 1rem;
       margin-bottom: 30px;
     }
-    textarea{
-       height: 200px;
-      font-size: 1rem;
-      margin-bottom: 30px;
-    }
     button{
       border-radius: 30px;
       width: 100px;
@@ -47,10 +42,15 @@ class JobPoster extends Component {
     applyUrl: '',
     category: '',
   }
+
   componentDidMount() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
   }
-  editorOnChange = (editorState) => this.setState({ editorState });
+
+  updateDetails = (editorstate) => {
+    this.setState({ details: editorstate });
+  }
+
   render() {
     const { job, postNewJob } = this.props
     const date = new Date().toLocaleDateString();
@@ -67,8 +67,7 @@ class JobPoster extends Component {
           <div>Logo</div>
           <input type="text" onChange={(e) => { this.setState({ logoUrl: e.target.value }) }} />
           <div>Details</div>
-          {/* <textarea type="text" onChange={(e) => { this.setState({ details: e.target.value }) }} /> */}
-          <MyEditor />
+          <MyEditor updateDetails={this.updateDetails} />
           <div>Visa Info</div>
           <input type="text" onChange={(e) => { this.setState({ visa: e.target.value }) }} />
           <div>Apply</div>
