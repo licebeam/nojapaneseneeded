@@ -1,6 +1,8 @@
 .editor {
  border: 1px solid grey;
  padding: 6px;
+ min-height: 400px;
+ margin-bottom: 20px;
 }
 
 /**

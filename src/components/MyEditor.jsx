@@ -19,12 +19,22 @@ class MyEditor extends React.Component {
       this.props.updateDetails(markdownString);
     };
   }
+
+  handleKeyCommand = (command) => {
+    const newState = RichUtils.handleKeyCommand(this.state.editorState, command)
+    if (newState) {
+      this.onChange(newState);
+      return 'handled';
+    }
+    return 'not-handled';
+  }
+
   render() {
     const { updateDetails } = this.props;
     console.log(this.state.editorState.getCurrentContent().getPlainText())
     return (
       <div className="editor">
-        <Editor editorState={this.state.editorState} onChange={this.onChange} />
+        <Editor handleKeyCommand={this.handleKeyCommand} editorState={this.state.editorState} onChange={this.onChange} />
       </div>
     );
   }
